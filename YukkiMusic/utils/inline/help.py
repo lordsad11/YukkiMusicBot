@@ -2,7 +2,7 @@ from typing import Union
 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from YukkiMusicBot import app
+from YukkiMusic import app
 
 
 def first_page(_):
