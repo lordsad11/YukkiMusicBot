@@ -5,7 +5,7 @@ from config import SUPPORT_CHANNEL, OWNER_USERNAME
 
 from pyrogram.types import InlineKeyboardButton
 
-from Auput.utils.formatters import time_to_seconds
+from YukkiMusic.utils.formatters import time_to_seconds
 
 
 
@@ -15,25 +15,25 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
     Uputt = math.floor(percentage)
-    if 0 < Uputt <= 10:
+    if 0 < Uputt  <= 10:
         bar = "✄·─·─·─·─·─·─·─·─·─"
-    elif 10 < Uputt < 20:
+    elif 10 < YukkiMusic < 20:
         bar = "-ˋˏ✄·─·─·─·─·─·─·─·─"
-    elif 20 <= Uputt < 30:
+    elif 20 <= YukkiMusic < 30:
         bar = "-ˋˏ-ˋˏ✄·─·─·─·─·─·─·─"
-    elif 30 <= Uputt < 40:
+    elif 30 <= YukkiMusic < 40:
         bar = "-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─·─"
-    elif 40 <= Uputt < 50:
+    elif 40 <= YukkiMusic < 50:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─"
-    elif 50 <= Uputt < 60:
+    elif 50 <= YukkiMusic < 60:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─"
-    elif 60 <= Uputt < 70:
+    elif 60 <= YukkiMusic < 70:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─"
-    elif 70 <= Uputt < 80:
+    elif 70 <= YukkiMusic < 80:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─"
-    elif 80 <= Uputt < 95:
+    elif 80 <= YukkiMusic < 95:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─"
-    elif 95 <= Uputt < 100:
+    elif 95 <= YukkiMusic < 100:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·"
     else:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄"
