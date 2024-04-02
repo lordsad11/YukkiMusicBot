@@ -1,17 +1,9 @@
-#
-# Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
-#
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
-#
-# All rights reserved.
-
 import asyncio
 from datetime import datetime, timedelta
 from typing import Union
 
 from pyrogram import Client
+from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import (ChatAdminRequired,
                              UserAlreadyParticipant,
                              UserNotParticipant)
@@ -61,7 +53,7 @@ class Call(PyTgCalls):
         self.userbot1 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING1),
+            session_string=str(config.STRING1),
         )
         self.one = PyTgCalls(
             self.userbot1,
@@ -70,7 +62,7 @@ class Call(PyTgCalls):
         self.userbot2 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING2),
+            session_string=str(config.STRING2),
         )
         self.two = PyTgCalls(
             self.userbot2,
@@ -79,7 +71,7 @@ class Call(PyTgCalls):
         self.userbot3 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING3),
+            session_string=str(config.STRING3),
         )
         self.three = PyTgCalls(
             self.userbot3,
@@ -88,7 +80,7 @@ class Call(PyTgCalls):
         self.userbot4 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING4),
+            session_string=str(config.STRING4),
         )
         self.four = PyTgCalls(
             self.userbot4,
@@ -97,7 +89,7 @@ class Call(PyTgCalls):
         self.userbot5 = Client(
             api_id=config.API_ID,
             api_hash=config.API_HASH,
-            session_name=str(config.STRING5),
+            session_string=str(config.STRING5),
         )
         self.five = PyTgCalls(
             self.userbot5,
@@ -205,7 +197,7 @@ class Call(PyTgCalls):
                 get = await app.get_chat_member(chat_id, userbot.id)
             except ChatAdminRequired:
                 raise AssistantErr(_["call_1"])
-            if get.status == "banned" or get.status == "kicked":
+            if get.status == ChatMemberStatus.BANNED or get.status == ChatMemberStatus.LEFT:
                 raise AssistantErr(
                     _["call_2"].format(userbot.username, userbot.id)
                 )
@@ -623,4 +615,4 @@ class Call(PyTgCalls):
                 autoend[chat_id] = {}
 
 
-Yukki = Call()
+Auput = Call()
