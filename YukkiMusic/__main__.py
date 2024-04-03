@@ -32,7 +32,7 @@ async def init():
         and not config.STRING4
         and not config.STRING5
     ):
-        LOGGER("sasoriMusic").error(
+        LOGGER("YukkiMusic").error(
             "No Assistant Clients Vars Defined!.. Exiting Process."
         )
         return
@@ -40,7 +40,7 @@ async def init():
         not config.SPOTIFY_CLIENT_ID
         and not config.SPOTIFY_CLIENT_SECRET
     ):
-        LOGGER("sasoriMusic").warning(
+        LOGGER("YukkiMusic").warning(
             "No Spotify Vars defined. Your bot won't be able to play spotify queries."
         )
     try:
@@ -54,8 +54,8 @@ async def init():
         pass
     await app.start()
     for all_module in ALL_MODULES:
-        importlib.import_module("sasoriMusic.plugins" + all_module)
-    LOGGER("sasorimusic.plugins").info(
+        importlib.import_module("YukkiMusic.plugins" + all_module)
+    LOGGER("yukkimusic.plugins").info(
         "Successfully Imported Modules "
     )
     await userbot.start()
@@ -72,10 +72,10 @@ async def init():
     except:
         pass
     await Yukki.decorators()
-    LOGGER("sasoriMusic").info("sasori Music Bot Started Successfully")
+    LOGGER("sasoriMusic").info("Yukki Music Bot Started Successfully")
     await idle()
 
 
 if __name__ == "__main__":
     loop.run_until_complete(init())
-    LOGGER("sasoriMusic").info("Stopping sasori Music Bot! GoodBye")
+    LOGGER("YukkiMusic").info("Stopping yukki Music Bot! GoodBye")
